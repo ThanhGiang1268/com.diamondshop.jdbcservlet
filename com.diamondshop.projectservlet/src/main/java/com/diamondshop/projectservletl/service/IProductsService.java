@@ -1,11 +1,10 @@
-
-package com.diamondshop.projectservlet.dao;
+package com.diamondshop.projectservletl.service;
 
 import java.util.List;
 
 import com.diamondshop.projectservlet.model.ProductsModel;
 
-public interface IProductsDAO extends IGenericDAO<ProductsModel> {
+public interface IProductsService {
 	List<ProductsModel> findAllProducts();
 	ProductsModel findOne(Long id);
 	ProductsModel findOneByProduct(Long idCategory);

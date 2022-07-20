@@ -3,7 +3,15 @@ package com.diamondshop.projectservlet.model;
 public class CategoryModel extends AbstractModel<CategoryModel> {
 	private String name;
 	private String description;
+	private String code;
 	
+	
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 	public String getName() {
 		return name;
 	}

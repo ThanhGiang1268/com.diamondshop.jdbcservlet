@@ -2,14 +2,23 @@ package com.diamondshop.projectservlet.model;
 
 public class ProductsModel extends AbstractModel<ProductsModel> {
 	private Long idCategory;
+	private String categoryCode;
 	private String sizes;
-	private String  name;
+	private String name;
 	private Double price;
 	private int sale;
 	private String title;
 	private int highLight;
 	private int newProduct;
 	private String longText;
+	
+	
+	public String getCategoryCode() {
+		return categoryCode;
+	}
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
 	public Long getIdCategory() {
 		return idCategory;
 	}
