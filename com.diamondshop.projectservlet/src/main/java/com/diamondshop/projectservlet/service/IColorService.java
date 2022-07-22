@@ -1,4 +1,4 @@
-package com.diamondshop.projectservletl.service;
+package com.diamondshop.projectservlet.service;
 
 import java.util.List;
 

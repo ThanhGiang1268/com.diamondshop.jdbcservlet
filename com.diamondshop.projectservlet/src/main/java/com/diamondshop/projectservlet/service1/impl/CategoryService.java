@@ -6,7 +6,7 @@ import javax.inject.Inject;
 
 import com.diamondshop.projectservlet.dao.ICategoryDAO;
 import com.diamondshop.projectservlet.model.CategoryModel;
-import com.diamondshop.projectservletl.service.ICategoryService;
+import com.diamondshop.projectservlet.service.ICategoryService;
 
 public class CategoryService implements ICategoryService {
 	

@@ -8,7 +8,7 @@ import com.diamondshop.projectservlet.dao.IColorDAO;
 import com.diamondshop.projectservlet.dao.IProductsDAO;
 import com.diamondshop.projectservlet.model.ColorModel;
 import com.diamondshop.projectservlet.model.ProductsModel;
-import com.diamondshop.projectservletl.service.IColorService;
+import com.diamondshop.projectservlet.service.IColorService;
 
 public class ColorService implements IColorService {
 	

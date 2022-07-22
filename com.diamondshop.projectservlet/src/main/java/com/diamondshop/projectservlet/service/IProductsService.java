@@ -1,4 +1,4 @@
-package com.diamondshop.projectservletl.service;
+package com.diamondshop.projectservlet.service;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import com.diamondshop.projectservlet.model.ProductsModel;
 public interface IProductsService {
 	List<ProductsModel> findAllProducts();
 	ProductsModel findOne(Long id);
-	ProductsModel findOneByProduct(Long idCategory);
-	ProductsModel findByPrice(Double price);
+	List<ProductsModel> findAllProductByCategoryId(Long idCategory);
+	List<ProductsModel> findAllByPrice(Double price);
 	ProductsModel findByName(String name);
-	ProductsModel findBySize(String sizes);
+	List<ProductsModel> findAllBySize(String sizes);
 }

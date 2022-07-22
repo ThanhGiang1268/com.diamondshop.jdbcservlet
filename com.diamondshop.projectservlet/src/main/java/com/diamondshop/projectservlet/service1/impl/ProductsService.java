@@ -8,18 +8,17 @@ import com.diamondshop.projectservlet.dao.ICategoryDAO;
 import com.diamondshop.projectservlet.dao.IProductsDAO;
 import com.diamondshop.projectservlet.model.CategoryModel;
 import com.diamondshop.projectservlet.model.ProductsModel;
-import com.diamondshop.projectservletl.service.IProductsService;
+import com.diamondshop.projectservlet.service.IProductsService;
 
-public class ProductsService implements IProductsService{
-	
+public class ProductsService implements IProductsService {
+
 	@Inject
 	private IProductsDAO productsDAO;
 	@Inject
 	private ICategoryDAO categoryDAO;
-	
+
 	@Override
 	public List<ProductsModel> findAllProducts() {
-		
 		return productsDAO.findAllProducts();
 	}
 
@@ -32,27 +31,25 @@ public class ProductsService implements IProductsService{
 	}
 
 	@Override
-	public ProductsModel findOneByProduct(Long idCategory) {
-		
-		return productsDAO.findOneByProduct(idCategory);
+	public List<ProductsModel> findAllProductByCategoryId(Long idCategory) {
+		return productsDAO.findAllProductByCategoryId(idCategory);
 	}
 
 	@Override
-	public ProductsModel findByPrice(Double price) {
-		
-		return productsDAO.findByPrice(price);
+	public List<ProductsModel> findAllByPrice(Double price) {
+		return productsDAO.findAllByPrice(price);
 	}
 
 	@Override
 	public ProductsModel findByName(String name) {
-		
+
 		return productsDAO.findByName(name);
 	}
 
 	@Override
-	public ProductsModel findBySize(String sizes) {
-		
-		return productsDAO.findBySize(sizes);
+	public List<ProductsModel> findAllBySize(String sizes) {
+
+		return productsDAO.findAllBySize(sizes);
 	}
-	
+
 }
