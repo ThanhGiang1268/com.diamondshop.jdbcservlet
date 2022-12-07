@@ -19,14 +19,15 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-<!-- 	<filter>
+	<filter>
 		<filter-name>servletFilter</filter-name>
-		<filter-class>com.ecomer.servlet.filter.AuthorizationFilter</filter-class>
+		<filter-class>com.diamondshop.projectservlet.filter.AuthorizationFilter</filter-class>
+		<!-- com.diamondshop.projectservlet -->
 	</filter>
 	<filter-mapping>
 		<filter-name>servletFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>  -->
+	</filter-mapping>
 
 	<session-config>
 		<tracking-mode>COOKIE</tracking-mode>

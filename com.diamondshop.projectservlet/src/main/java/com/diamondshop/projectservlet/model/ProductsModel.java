@@ -1,7 +1,9 @@
 package com.diamondshop.projectservlet.model;
 
+import java.util.Arrays;
+
 public class ProductsModel extends AbstractModel<ProductsModel> {
-	private Long idCategory;
+	
 	private String categoryCode;
 	private String sizes;
 	private String name;
@@ -11,19 +13,40 @@ public class ProductsModel extends AbstractModel<ProductsModel> {
 	private int highLight;
 	private int newProduct;
 	private String longText;
+	private ColorModel color = new ColorModel();
+	private Long idColor;
+	private String description;
 	
 	
+	@Override
+	public String toString() {
+		return "ProductsModel [categoryCode=" + categoryCode + ", sizes=" + sizes + ", name=" + name + ", price="
+				+ price + ", sale=" + sale + ", title=" + title + ", highLight=" + highLight + ", newProduct="
+				+ newProduct + ", longText=" + longText + ", color=" + color + ", idColor=" + idColor + ", description="
+				+ description + ", getDescription()=" + getDescription() + ", getCategoryCode()=" + getCategoryCode()
+				+ ", getSizes()=" + getSizes() + ", getName()=" + getName() + ", getPrice()=" + getPrice()
+				+ ", getSale()=" + getSale() + ", getTitle()=" + getTitle() + ", getHighLight()=" + getHighLight()
+				+ ", getNewProduct()=" + getNewProduct() + ", getLongText()=" + getLongText() + ", getColor()="
+				+ getColor() + ", getIdColor()=" + getIdColor() + ", getId()=" + getId() + ", getCreatedDate()="
+				+ getCreatedDate() + ", getModifiedDate()=" + getModifiedDate() + ", getCreatedBy()=" + getCreatedBy()
+				+ ", getModifiedBy()=" + getModifiedBy() + ", getIds()=" + Arrays.toString(getIds())
+				+ ", getListResult()=" + getListResult() + ", getPage()=" + getPage() + ", getMaxPageItem()="
+				+ getMaxPageItem() + ", getTotalPage()=" + getTotalPage() + ", getTotalItem()=" + getTotalItem()
+				+ ", getSortName()=" + getSortName() + ", getSortBy()=" + getSortBy() + ", getAlert()=" + getAlert()
+				+ ", getMessage()=" + getMessage() + ", getType()=" + getType() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	public String getCategoryCode() {
 		return categoryCode;
 	}
 	public void setCategoryCode(String categoryCode) {
 		this.categoryCode = categoryCode;
-	}
-	public Long getIdCategory() {
-		return idCategory;
-	}
-	public void setIdCategory(Long idCategory) {
-		this.idCategory = idCategory;
 	}
 	public String getSizes() {
 		return sizes;
@@ -73,15 +96,18 @@ public class ProductsModel extends AbstractModel<ProductsModel> {
 	public void setLongText(String longText) {
 		this.longText = longText;
 	}
-	@Override
-	public String toString() {
-		return "ProductsModel [idCategory=" + idCategory + ", sizes=" + sizes + ", name=" + name + ", price=" + price
-				+ ", sale=" + sale + ", title=" + title + ", highLight=" + highLight + ", newProduct=" + newProduct
-				+ ", longText=" + longText + ", getIdCategory()=" + getIdCategory() + ", getSizes()=" + getSizes()
-				+ ", getName()=" + getName() + ", getPrice()=" + getPrice() + ", getSale()=" + getSale()
-				+ ", getTitle()=" + getTitle() + ", getHighLight()=" + getHighLight() + ", getNewProduct()="
-				+ getNewProduct() + ", getLongText()=" + getLongText() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
+
+	public ColorModel getColor() {
+		return color;
+	}
+	public void setColor(ColorModel color) {
+		this.color = color;
+	}
+	public Long getIdColor() {
+		return idColor;
+	}
+	public void setIdColor(Long idColor) {
+		this.idColor = idColor;
 	}
 	
 	
