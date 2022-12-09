@@ -3,67 +3,97 @@
 <%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-
-<meta charset="utf-8">
-<title>Twitter Bootstrap shopping cart</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
+<title>Ecommerce</title>
 
-<!-- Bootstrap styles -->
-<link href="<c:url value ="/template/assets/css/bootstrap.css"/>"
-	rel="stylesheet" />
-<!-- Customize styles -->
-<link href="<c:url value ="/template/assets/css/style.css"/>"
-	rel="stylesheet" />
-
-<!-- font awesome styles -->
+<link rel="stylesheet"
+	href="<c:url value ="/template/web/assets/css/styles.css"/>">
+<link rel="stylesheet"
+	href="<c:url value ="/template/web/assets/css/main.css"/>">
 <link
-	href="<c:url value ="/template/assets/font-awesome/css/font-awesome.css"/>"
-	rel="stylesheet" />
-
-<!-- Favicons -->
-<link rel="shortcut icon"
-	href="<c:url value ="/template/assets/ico/favicon.ico"/>" />
-	<!-- ở đây có cục cứt cần phải xóa -->
-	<%-- <link rel="stylesheet" href="<c:url value ="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>">
-    <link rel="stylesheet" href="<c:url value ="./assets/css/main.css"/>">
-    <link rel="stylesheet" href="<c:url value ="./assets/css/base.css"/>">
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400, 500, 700&display=swap&subset=vietnamese"
-        rel="stylesheet">
-    <link rel="stylesheet" href="<c:url value ="./assets/icon/fontawesome-free-6.2.0-web/css/all.min.css"/>">  --%>
+	href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="http://unpkg.com/swiper@8/swiper-bundle.min.css">
 </head>
 
 <body>
-	
-	<%@ include file="/common/web/header.jsp"%>
+	<div id="page" class="site">
 
-	<div class="container">
-		<dec:body />
+		<aside class="site-off desktop-hide">
+			<div class="off-canvas">
+				<div class="canvas-head flexitem">
+					<div class="logo">
+						<a href="/"><span class="circle"></span>.Store</a>
+					</div>
+					<a href="#" class="t-close flexcenter"><i class="ri-close-line"></i></a>
+				</div>
+				<div class="departments"></div>
+				<nav></nav>
+				<div class="thetop-nav"></div>
+			</div>
+		</aside>
+		<header>
+			<%@ include file="/common/web/header.jsp"%>
+		</header>
+		<!--end header-->
+		<!--1:00:00-->
+		<main>
+			<dec:body />
+		</main>
+		<footer>
+			<%@ include file="/common/web/footer.jsp"%>
+		</footer>
+		<!-- end footer-info -->
+
+		<div class="menu-bottom desktop-hide">
+			<div class="container">
+				<div class="wrapper">
+					<nav>
+						<ul class="flexitem">
+							<li><a href="#"> <i class="ri-bar-chart-line"> </i> <span>Trending</span>
+							</a></li>
+							<li><a href="#"> <i class="ri-user-6-line"> </i> <span>Account</span>
+							</a></li>
+							<li><a href="#"> <i class="ri-heart-line"> </i> <span>WishList</span>
+							</a></li>
+							<li><a href="#"> <i class="ri-search"> </i> <span>Search</span>
+							</a></li>
+							<li><a href="#"> <i class="ri-shopping-cart-line"> </i>
+									<span>Cart</span>
+									<div class="fly-item">
+										<span class="item-number">0</span>
+									</div>
+							</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<!-- end menu - bottom-->
+
+		<div class="search-bottom desktop-hide">
+			<div class="container">
+				<div class="wrapper">
+					<form action="" class="search">
+						<a href="#" class="t-close search-close flexcenter"><i
+							class="ri-close-line"></i></a> <span class="icon-large"><i
+							class="ri-mail-line"></i></span> <input type="search"
+							placeholder="Your email address" required>
+						<button type="submit">Search</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<%@ include file="/common/web/footer.jsp"%>
-	<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="<c:url value ="/template/assets/js/jquery.js"/>">
-		
-	</script>
-	<script src="<c:url value ="/template/assets/js/bootstrap.min.js"/>">
-		
-	</script>
-	<script
-		src="<c:url value ="/template/assets/js/jquery.easing-1.3.min.js"/>">
-		
-	</script>
-
-	<script src="<c:url value ="/template/assets/js/jquery.js"/>"></script>
-	<script
-		src="<c:url value ="/template/assets/js/jquery.scrollTo-1.4.3.1-min.js"/>"></script>
-	<script src="<c:url value ="/template/assets/js/shop.js"/>">
-		
-	</script>
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<script src="<c:url value="/template/web/assets/js/script.js"/>"></script>
 
 </body>
+
 </html>

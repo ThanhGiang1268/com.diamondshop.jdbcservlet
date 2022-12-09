@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.diamondshop.projectservlet.model.UserModel;
 import com.diamondshop.projectservlet.service.ICategoryService;
-import com.diamondshop.projectservlet.service.ISlideService;
+import com.diamondshop.projectservlet.service.IProductsService;
 import com.diamondshop.projectservlet.service.IUserService;
 import com.diamondshop.projectservlet.utils.FormUtil;
 import com.diamondshop.projectservlet.utils.SessionUtil;
@@ -28,7 +28,7 @@ public class HomeController extends HttpServlet {
 	private IUserService iuserService;
 	
 	@Inject
-	private ISlideService islideService;
+	private IProductsService iproductsService;
 
 
 	private static final long serialVersionUID = 1L;
@@ -51,7 +51,7 @@ public class HomeController extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/trang-chu");
 		} else {
 			request.setAttribute("categories", icategoryService.findAll());
-			request.setAttribute("slides", islideService.findAll());
+			request.setAttribute("products", iproductsService.findAll());
 			RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
 			rd.forward(request, response);
 		}

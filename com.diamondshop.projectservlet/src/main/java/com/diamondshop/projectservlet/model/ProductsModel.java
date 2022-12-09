@@ -1,52 +1,26 @@
 package com.diamondshop.projectservlet.model;
 
-import java.util.Arrays;
-
 public class ProductsModel extends AbstractModel<ProductsModel> {
 	
-	private String categoryCode;
+	private int id_category;
 	private String sizes;
 	private String name;
 	private Double price;
 	private int sale;
 	private String title;
-	private int highLight;
-	private int newProduct;
-	private String longText;
-	private ColorModel color = new ColorModel();
-	private Long idColor;
+	private boolean highlight;
+	private boolean newProduct;
+	private String details;
+	private long id_color;
+	private String name_color;
+	private String code_color;
+	private String img;
 	private String description;
-	
-	
-	@Override
-	public String toString() {
-		return "ProductsModel [categoryCode=" + categoryCode + ", sizes=" + sizes + ", name=" + name + ", price="
-				+ price + ", sale=" + sale + ", title=" + title + ", highLight=" + highLight + ", newProduct="
-				+ newProduct + ", longText=" + longText + ", color=" + color + ", idColor=" + idColor + ", description="
-				+ description + ", getDescription()=" + getDescription() + ", getCategoryCode()=" + getCategoryCode()
-				+ ", getSizes()=" + getSizes() + ", getName()=" + getName() + ", getPrice()=" + getPrice()
-				+ ", getSale()=" + getSale() + ", getTitle()=" + getTitle() + ", getHighLight()=" + getHighLight()
-				+ ", getNewProduct()=" + getNewProduct() + ", getLongText()=" + getLongText() + ", getColor()="
-				+ getColor() + ", getIdColor()=" + getIdColor() + ", getId()=" + getId() + ", getCreatedDate()="
-				+ getCreatedDate() + ", getModifiedDate()=" + getModifiedDate() + ", getCreatedBy()=" + getCreatedBy()
-				+ ", getModifiedBy()=" + getModifiedBy() + ", getIds()=" + Arrays.toString(getIds())
-				+ ", getListResult()=" + getListResult() + ", getPage()=" + getPage() + ", getMaxPageItem()="
-				+ getMaxPageItem() + ", getTotalPage()=" + getTotalPage() + ", getTotalItem()=" + getTotalItem()
-				+ ", getSortName()=" + getSortName() + ", getSortBy()=" + getSortBy() + ", getAlert()=" + getAlert()
-				+ ", getMessage()=" + getMessage() + ", getType()=" + getType() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	public int getId_category() {
+		return id_category;
 	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public String getCategoryCode() {
-		return categoryCode;
-	}
-	public void setCategoryCode(String categoryCode) {
-		this.categoryCode = categoryCode;
+	public void setId_category(int id_category) {
+		this.id_category = id_category;
 	}
 	public String getSizes() {
 		return sizes;
@@ -78,37 +52,58 @@ public class ProductsModel extends AbstractModel<ProductsModel> {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public int getHighLight() {
-		return highLight;
+	public boolean isHighlight() {
+		return highlight;
 	}
-	public void setHighLight(int highLight) {
-		this.highLight = highLight;
+	public void setHighlight(boolean highlight) {
+		this.highlight = highlight;
 	}
-	public int getNewProduct() {
+	public boolean isNewProduct() {
 		return newProduct;
 	}
-	public void setNewProduct(int newProduct) {
+	public void setNewProduct(boolean newProduct) {
 		this.newProduct = newProduct;
 	}
-	public String getLongText() {
-		return longText;
+	public String getDetails() {
+		return details;
 	}
-	public void setLongText(String longText) {
-		this.longText = longText;
+	public void setDetails(String details) {
+		this.details = details;
 	}
-
-	public ColorModel getColor() {
-		return color;
+	public long getId_color() {
+		return id_color;
 	}
-	public void setColor(ColorModel color) {
-		this.color = color;
+	public void setId_color(long id_color) {
+		this.id_color = id_color;
 	}
-	public Long getIdColor() {
-		return idColor;
+	public String getName_color() {
+		return name_color;
 	}
-	public void setIdColor(Long idColor) {
-		this.idColor = idColor;
+	public void setName_color(String name_color) {
+		this.name_color = name_color;
 	}
+	public String getCode_color() {
+		return code_color;
+	}
+	public void setCode_color(String code_color) {
+		this.code_color = code_color;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	
+	
+	
 	
 	
 }

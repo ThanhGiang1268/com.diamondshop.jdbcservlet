@@ -8,11 +8,11 @@ import com.diamondshop.projectservlet.pageable.Pageable;
 
 
 public interface IProductsDAO extends IGenericDAO<ProductsModel> {
+	List<ProductsModel> findAll();
 	List<ProductsModel> findAll(Pageable pageable);
 	List<ProductsModel> findByCategoryId(Long idCategory);
 	List<ProductsModel> findAllByPrice(Double price);
 	List<ProductsModel> findAllBySize(String sizes);
-	List<ProductsModel> findAllProductsByOneColor(Long idColor); 
 	//List<ProductsModel> findOneProductsByManyColor(Long id); 
 	ProductsModel findByName(String name);
 	ProductsModel findOne(Long id);

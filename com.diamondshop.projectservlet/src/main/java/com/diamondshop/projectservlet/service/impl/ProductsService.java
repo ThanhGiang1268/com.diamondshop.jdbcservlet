@@ -7,7 +7,6 @@ import javax.inject.Inject;
 
 import com.diamondshop.projectservlet.dao.ICategoryDAO;
 import com.diamondshop.projectservlet.dao.IProductsDAO;
-import com.diamondshop.projectservlet.model.CategoryModel;
 import com.diamondshop.projectservlet.model.ProductsModel;
 import com.diamondshop.projectservlet.pageable.Pageable;
 import com.diamondshop.projectservlet.service.IProductsService;
@@ -27,8 +26,6 @@ public class ProductsService implements IProductsService {
 	@Override
 	public ProductsModel findOne(Long id) {
 		ProductsModel productsModel = iproductsDAO.findOne(id);
-		CategoryModel categoryModel = icategoryDAO.findOneByCode(productsModel.getCategoryCode());
-		productsModel.setCategoryCode(categoryModel.getCode());
 		return productsModel;
 	}
 
@@ -58,8 +55,7 @@ public class ProductsService implements IProductsService {
 	public ProductsModel save(ProductsModel productsModel) {
 		//productsModel.setCreatedDate(new Timestamp(System.currentTimeMillis()));
 		productsModel.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-		CategoryModel category = icategoryDAO.findOneByCode(productsModel.getCategoryCode());	 /* findOne(productsModel.getCategoryCode()); */
-		productsModel.setCategoryCode(category.getCode());  
+		
 		Long newCode = iproductsDAO.save(productsModel);
 		return iproductsDAO.findOne(newCode);
 	}
@@ -71,8 +67,7 @@ public class ProductsService implements IProductsService {
 		updateProducts.setCreatedDate(oldProducts.getCreatedDate());
 		updateProducts.setCreatedBy(oldProducts.getCreatedBy());
 		updateProducts.setModifiedDate(new Timestamp(System.currentTimeMillis()));
-		CategoryModel category = icategoryDAO.findOneByCode(updateProducts.getCategoryCode());
-		updateProducts.setId(category.getId());
+		
 		iproductsDAO.update(updateProducts);
 		return iproductsDAO.findOne(updateProducts.getId());
 	}
@@ -93,7 +88,12 @@ public class ProductsService implements IProductsService {
 	@Override
 	public List<ProductsModel> findAllProductsByOneColor(Long idColor) {
 		
-		return iproductsDAO.findAllProductsByOneColor(idColor);
+		return null;
+	}
+
+	@Override
+	public List<ProductsModel> findAll() {
+		return iproductsDAO.findAll();
 	}
 
 }

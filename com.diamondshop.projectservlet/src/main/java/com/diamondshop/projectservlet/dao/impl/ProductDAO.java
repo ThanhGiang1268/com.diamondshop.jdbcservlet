@@ -9,6 +9,7 @@ import com.diamondshop.projectservlet.pageable.Pageable;
 
 public class ProductDAO extends AbstractDAO<ProductsModel> implements IProductsDAO {
 
+	
 	@Override
 	public List<ProductsModel> findAll(Pageable pageable) {
 		String sql = "SELECT * FROM products";
@@ -52,24 +53,22 @@ public class ProductDAO extends AbstractDAO<ProductsModel> implements IProductsD
 	@Override
 	public Long save(ProductsModel productsModel) {
 		StringBuilder sql = new StringBuilder("INSERT INTO products (title, name,");
-		sql.append(" sizes, price, sale, highLight, newProduct, longText, createddate, createdby)");
-		sql.append(" VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		sql.append(" sizes, price, sale, createddate, createdby)");
+		sql.append(" VALUES(?, ?, ?, ?, ?, ?, ?)");
 		return insert(sql.toString(), productsModel.getTitle(), productsModel.getName(), productsModel.getSizes(),
 				productsModel.getPrice(), productsModel.getSale(),
-				productsModel.getSale(), productsModel.getHighLight(), productsModel.getNewProduct(),
-				productsModel.getLongText(), productsModel.getCreatedDate(), productsModel.getCreatedBy());
+				productsModel.getSale(), productsModel.getCreatedDate(), productsModel.getCreatedBy());
 	}
 
 	@Override
 	public void update(ProductsModel updateProducts) {
 		StringBuilder sql = new StringBuilder("UPDATE products SET title = ?, name = ?,");
-		sql.append(" sizes = ?, price = ?, idcategory,");
-		sql.append(" idcategory = ?, sale = ?, highLight = ?, newProduct = ?, ");
-		sql.append(" longText = ?, createddate = ?, createdby = ? WHERE id = ? ");
+		sql.append(" sizes = ?, price = ?,");
+		sql.append(" idcategory = ?, sale = ?,");
+		sql.append("createddate = ?, createdby = ? WHERE id = ? ");
 		update(sql.toString(),updateProducts.getTitle(),updateProducts.getId(),updateProducts.getName(),
 				updateProducts.getSizes(),updateProducts.getPrice(),
-				updateProducts.getSale(),updateProducts.getHighLight(),updateProducts.getNewProduct(),
-				updateProducts.getLongText(),updateProducts.getCreatedDate(),updateProducts.getCreatedBy());
+				updateProducts.getSale(),updateProducts.getCreatedDate(),updateProducts.getCreatedBy());
 	}
 
 	@Override
@@ -85,12 +84,12 @@ public class ProductDAO extends AbstractDAO<ProductsModel> implements IProductsD
 	}
 
 	@Override
-	public List<ProductsModel> findAllProductsByOneColor(Long idColor) {
-		StringBuilder sql = new StringBuilder("SELECT * FROM products AS pr");
-		sql.append(" INNER JOIN color AS co ON co.id = pr.idcolor");
-		sql.append(" WHERE idcolor = ?");
-		return query(sql.toString(), new ProductsMapper(), idColor);
+	public List<ProductsModel> findAll() {
+		String sql = "SELECT * FROM products";
+		return query(sql, new ProductsMapper());
 	}
+
+
 
 //	@Override
 //	public List<ProductsModel> findOneProductsByManyColor(Long id) {

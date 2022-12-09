@@ -12,16 +12,15 @@ public class ProductsMapper implements IRowMapper<ProductsModel>{
 		try {
 			ProductsModel productsModel = new ProductsModel();
 			productsModel.setId(result.getLong("id"));
-			productsModel.setCategoryCode(result.getString("categorycode"));
+			productsModel.setId_category(result.getInt("id_category"));
 			productsModel.setSizes(result.getString("sizes"));
 			productsModel.setName(result.getString("name"));
 			productsModel.setPrice(result.getDouble("price"));
 			productsModel.setSale(result.getInt("sale"));
 			productsModel.setTitle(result.getString("title"));
-			productsModel.setHighLight(result.getInt("highlight"));
-			productsModel.setNewProduct(result.getInt("newdroduct"));
-			productsModel.setLongText(result.getString("longtext"));
-			productsModel.setIdColor(result.getLong("idcolor"));
+			productsModel.setHighlight(result.getBoolean("highlight"));
+			productsModel.setNewProduct(result.getBoolean("newProduct"));
+			productsModel.setDetails(result.getString("details"));
 			return productsModel;
 		} catch (SQLException e) {
 			return null;

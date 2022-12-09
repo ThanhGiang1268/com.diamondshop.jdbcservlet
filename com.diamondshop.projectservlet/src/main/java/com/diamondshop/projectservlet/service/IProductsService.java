@@ -6,6 +6,7 @@ import com.diamondshop.projectservlet.model.ProductsModel;
 import com.diamondshop.projectservlet.pageable.Pageable;
 
 public interface IProductsService {
+	List<ProductsModel> findAll();
 	List<ProductsModel> findAll(Pageable pageable);
 	List<ProductsModel> findByCategoryId(Long idCategory);
 	List<ProductsModel> findAllByPrice(Double price);
