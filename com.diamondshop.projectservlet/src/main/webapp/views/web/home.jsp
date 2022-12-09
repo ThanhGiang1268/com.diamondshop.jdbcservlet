@@ -108,17 +108,19 @@
 				</div>
 			</div>
 			<!--end slider-->
+			<c:forEach var="konkack" items="${ imgbrands }">
+				<div class="brands">
 
-			<div class="brands">
-				<div class="container">
-					<div class="wrapper flexitem">
-						<div class="item">
-							<a href="#"> <img
-								src="<c:url value ="/template/web/assets/img/brands/zara.png"/>"
-								alt="">
-							</a>
-						</div>
-						<div class="item">
+					<div class="container">
+						<div class="wrapper flexitem">
+
+							<div class="item">
+								<a href="#"> <img
+									src="<c:url value ="/template/web/assets/img/brands/${ konkack.img }"/>"
+									alt="">
+								</a>
+							</div>
+							<%-- <div class="item">
 							<a href="#"> <img
 								src="<c:url value ="/template/web/assets/img/brands/samsung.png"/>"
 								alt="">
@@ -147,10 +149,11 @@
 								src="<c:url value ="/template/web/assets/img/brands/dng.png"/>"
 								alt="">
 							</a>
+						</div> --%>
 						</div>
 					</div>
 				</div>
-			</div>
+			</c:forEach>
 			<!--end brands-->
 
 			<div class="trending">
@@ -193,6 +196,7 @@
 												<span>31%</span>
 											</div>
 										</div>
+
 										<div class="content">
 											<div class="rating">
 												<div class="stars"></div>
@@ -219,46 +223,47 @@
 								</div>
 								<!-- left image -->
 								<div class="row products mini">
-									<div class="item">
-										<div class="media">
-											<div class="thumbnail object-cover">
-												<a href="#"> <img
-													src="<c:url value ="/template/web/assets/products/apparel3.jpg"/>"
-													alt="">
-												</a>
+									<c:forEach var="vaicalon" items="${ products }">
+										<div class="item">
+											<div class="media">
+												<div class="thumbnail object-cover">
+													<a href="#"> <img
+														src="<c:url value ="/template/web/assets/products/${ vaicalon.img }"/>"
+														alt="">
+													</a>
+												</div>
+												<div class="hoverable">
+													<ul>
+														<li class="active"><a href="#"><i
+																class="ri-heart-line"></i></a></li>
+														<li><a href=""><i class="ri-eye-line"></i></a></li>
+														<li><a href=""><i class="ri-shuffle-line"></i></a></li>
+													</ul>
+												</div>
+												<div class="discount circle flexcenter">
+													<span>${ vaicalon.percent }</span>
+												</div>
 											</div>
-											<div class="hoverable">
-												<ul>
-													<li class="active"><a href="#"><i
-															class="ri-heart-line"></i></a></li>
-													<li><a href=""><i class="ri-eye-line"></i></a></li>
-													<li><a href=""><i class="ri-shuffle-line"></i></a></li>
-												</ul>
-											</div>
-											<div class="discount circle flexcenter">
-												<span>32%</span>
+											<div class="content">
+												<h3 class="main-links">
+													<a href="#">${ vaicalon.name } </a>
+												</h3>
+												<div class="rating">
+													<div class="stars"></div>
+													<span class="mini-text">(2,548)</span>
+												</div>
+												<div class="price">
+													<span class="current">${vaicalon.sale }</span> <span
+														class="normal mini-text">${vaicalon.price}</span>
+												</div>
+												<div class="mini-text">
+													<p>${vaicalon.sold}</p>
+													<p>Free Shipping</p>
+												</div>
 											</div>
 										</div>
-										<div class="content">
-											<h3 class="main-links">
-												<a href="#">Black Women's Coat Dress </a>
-											</h3>
-											<div class="rating">
-												<div class="stars"></div>
-												<span class="mini-text">(2,548)</span>
-											</div>
-											<div class="price">
-												<span class="current">$129.99</span> <span
-													class="normal mini-text">$189.98</span>
-											</div>
-											<div class="mini-text">
-												<p>2975 sold</p>
-												<p>Free Shipping</p>
-											</div>
-										</div>
-									</div>
-
-									<div class="item">
+									</c:forEach>
+									<!-- <div class="item">
 										<div class="media">
 											<div class="thumbnail object-cover">
 												<a href="#"> <img src="assets/products/apparel1.jpg"
@@ -296,50 +301,50 @@
 											</div>
 										</div>
 									</div>
-
-
+ -->
 									<!-- end image left -->
-
 								</div>
 								<div class="row products mini">
 
-
-									<div class="item">
-										<div class="media">
-											<div class="thumbnail object-cover">
-												<a href="#"> <img src="assets/products/shoe1.jpg" alt="">
-												</a>
+									<c:forEach var="vaicalon1" items="${ products1 }">
+										<div class="item">
+											<div class="media">
+												<div class="thumbnail object-cover">
+													<a href="#"> <img
+														src="assets/products/${vaicalon1.img1 }" alt="">
+													</a>
+												</div>
+												<div class="hoverable">
+													<ul>
+														<li class="active"><a href="#"><i
+																class="ri-heart-line"></i></a></li>
+														<li><a href=""><i class="ri-eye-line"></i></a></li>
+														<li><a href=""><i class="ri-shuffle-line"></i></a></li>
+													</ul>
+												</div>
+												<div class="discount circle flexcenter">
+													<span>${vaicalone.percent1 }</span>
+												</div>
 											</div>
-											<div class="hoverable">
-												<ul>
-													<li class="active"><a href="#"><i
-															class="ri-heart-line"></i></a></li>
-													<li><a href=""><i class="ri-eye-line"></i></a></li>
-													<li><a href=""><i class="ri-shuffle-line"></i></a></li>
-												</ul>
-											</div>
-											<div class="discount circle flexcenter">
-												<span>32%</span>
+											<div class="content">
+												<h3 class="main-links">
+													<a href="#">${vaicalon1.name1 } </a>
+												</h3>
+												<div class="rating">
+													<div class="stars"></div>
+													<span class="mini-text">(2,548)</span>
+												</div>
+												<div class="price">
+													<span class="current">${vaicalon1.sale}</span> <span
+														class="normal mini-text">${vaicalon1.price}</span>
+												</div>
+												<div class="mini-text">
+													<p>${vaicalon1.sold }p>
+													<p>Free Shipping</p>
+												</div>
 											</div>
 										</div>
-										<div class="content">
-											<h3 class="main-links">
-												<a href="#">Men Slip On Shoes Casual </a>
-											</h3>
-											<div class="rating">
-												<div class="stars"></div>
-												<span class="mini-text">(2,548)</span>
-											</div>
-											<div class="price">
-												<span class="current">$129.99</span> <span
-													class="normal mini-text">$189.98</span>
-											</div>
-											<div class="mini-text">
-												<p>2975 sold</p>
-												<p>Free Shipping</p>
-											</div>
-										</div>
-									</div>
+									</c:forEach>
 								</div>
 							</div>
 						</div>
@@ -348,6 +353,7 @@
 			</div>
 
 			<!-- end trending -->
+
 			<div class="features">
 				<div class="container">
 					<div class="wrapper">
@@ -361,50 +367,53 @@
 										class="ri-arrow-right-line"></i></a>
 								</div>
 							</div>
+
 							<div class="products main flexwrap">
 
 								<div class="item">
-									<div class="media">
-										<div class="thumbnail object-cover">
-											<a href="#"> <img src="assets/products/apparel2.jpg"
-												alt="">
-											</a>
+									<c:forEach var="vaicalon" items="${ products }">
+										<div class="media">
+											<div class="thumbnail object-cover">
+												<a href="#"> <img src="assets/products/${vaicalon.img}"
+													alt="">
+												</a>
+											</div>
+											<div class="hoverable">
+												<ul>
+													<li class="active"><a href="#"><i
+															class="ri-heart-line"></i></a></li>
+													<li><a href="#"><i class="ri-eye-line"></i></a></li>
+													<li><a href="#"><i class="ri-shuffle-line"></i></a></li>
+												</ul>
+											</div>
+											<div class="discount circle flexcenter">
+												<span>${vaicalon.percent}</span>
+											</div>
 										</div>
-										<div class="hoverable">
-											<ul>
-												<li class="active"><a href="#"><i
-														class="ri-heart-line"></i></a></li>
-												<li><a href="#"><i class="ri-eye-line"></i></a></li>
-												<li><a href="#"><i class="ri-shuffle-line"></i></a></li>
-											</ul>
+										<div class="content">
+											<div class="rating">
+												<div class="stars"></div>
+												<span class="mini-text">${vaicalon.describe}</span>
+											</div>
+											<h3>
+												<a href="#">${vaicalon.name}</a>
+											</h3>
+											<div class="price">
+												<span class="current">${vaicalon.sale}</span> <span
+													class="normal mini-text">${vaicalon.price}</span>
+											</div>
+											<!-- additional structure -->
+											<div class="footer">
+												<ul class="mini-text">
+													<li>Polyester, Cotton</li>
+													<li>Pull On Closure</li>
+													<li>Fashion Persionality</li>
+												</ul>
+											</div>
 										</div>
-										<div class="discount circle flexcenter">
-											<span>17%</span>
-										</div>
-									</div>
-									<div class="content">
-										<div class="rating">
-											<div class="stars"></div>
-											<span class="mini-text">(944)</span>
-										</div>
-										<h3>
-											<a href="#">Women's Lightweight Knit Hoodie Sweater</a>
-										</h3>
-										<div class="price">
-											<span class="current">$37.50</span> <span
-												class="normal mini-text">$45.50</span>
-										</div>
-										<!-- additional structure -->
-										<div class="footer">
-											<ul class="mini-text">
-												<li>Polyester, Cotton</li>
-												<li>Pull On Closure</li>
-												<li>Fashion Persionality</li>
-											</ul>
-										</div>
-									</div>
+									</c:forEach>
 								</div>
-								
+
 							</div>
 						</div>
 					</div>
@@ -420,7 +429,9 @@
 								<div class="row">
 									<div class="item">
 										<div class="image">
-											<img src="<c:url value ="/template/web/assets/img/banner/banner1.jpg"/>" alt="">
+											<img
+												src="<c:url value ="/template/web/assets/img/banner/banner1.jpg"/>"
+												alt="">
 										</div>
 										<div class="text-content flexcol">
 											<h4>Brutal Sale!</h4>
@@ -436,7 +447,9 @@
 								<div class="row">
 									<div class="item get-gray">
 										<div class="image">
-											<img src="<c:url value ="/template/web/assets/img/banner/banner2.jpg"/>" alt="">
+											<img
+												src="<c:url value ="/template/web/assets/img/banner/banner2.jpg"/>"
+												alt="">
 										</div>
 										<div class="text-content flexcol">
 											<h4>Brutal Sale!</h4>
@@ -455,7 +468,9 @@
 								<div class="row">
 									<div class="item">
 										<div class="image">
-											<img src="<c:url value ="/template/web/assets/img/banner/procat1.jpg"/>" alt="">
+											<img
+												src="<c:url value ="/template/web/assets/img/banner/procat1.jpg"/>"
+												alt="">
 										</div>
 
 										<div class="content mini-links">
@@ -479,7 +494,9 @@
 								<div class="row">
 									<div class="item">
 										<div class="image">
-											<img src="<c:url value ="/template/web/assets/img/banner/procat2.jpg"/>" alt="">
+											<img
+												src="<c:url value ="/template/web/assets/img/banner/procat2.jpg"/>"
+												alt="">
 										</div>
 
 										<div class="content mini-links">
@@ -504,7 +521,9 @@
 								<div class="row">
 									<div class="item">
 										<div class="image">
-											<img src="<c:url value ="/template/web/assets/img/banner/procat3.jpg"/>" alt="">
+											<img
+												src="<c:url value ="/template/web/assets/img/banner/procat3.jpg"/>"
+												alt="">
 										</div>
 
 										<div class="content mini-links">
